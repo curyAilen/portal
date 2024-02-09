@@ -6,17 +6,22 @@
   <title>Ejemplo de Bootstrap</title>
   <!-- Enlace al archivo CSS de Bootstrap -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="src/style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap">
+
 </head>
 <body>
     
   <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container">
-      <a class="navbar-brand" href="#">Tu Logo</a>
+    <div class="container-fluid "> 
+        <a class="navbar-brand col-3" href="#">
+            <img src="src/logo.png" alt="Logo" class="img-fluid" id="logo-img">
+          </a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+        <ul class="navbar-nav ms-auto mb-2 mb-lg-0 col">
           <li class="nav-item">
             <a class="nav-link" href="#">Recetas</a>
           </li>
@@ -36,10 +41,36 @@
   
   <div class="container">
     <h1>Ejemplo de Bootstrap</h1>
-    <p>Este es un ejemplo básico de cómo utilizar Bootstrap en tu página web.</p>
-    
-    <!-- Botón de Bootstrap -->
-    <button type="button" class="btn btn-primary">Botón de Bootstrap</button>
+    <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+            <button type="button" class="btn btn-primary w-100">
+              <img src="ruta/a/tu/imagen1.jpg" alt="Imagen 1" class="img-fluid mb-2">
+              Nombre del Botón 1
+            </button>
+          </div>
+        
+          <div class="col-lg-3 col-md-6 mb-4">
+            <button type="button" class="btn btn-primary w-100">
+              <img src="ruta/a/tu/imagen2.jpg" alt="Imagen 2" class="img-fluid mb-2">
+              Nombre del Botón 2
+            </button>
+          </div>
+        
+          <div class="col-lg-3 col-md-6 mb-4">
+            <button type="button" class="btn btn-primary w-100">
+              <img src="ruta/a/tu/imagen3.jpg" alt="Imagen 3" class="img-fluid mb-2">
+              Nombre del Botón 3
+            </button>
+          </div>
+      
+          <div class="col-lg-3 col-md-6 mb-4">
+            <button type="button" class="btn btn-primary w-100">
+              <img src="ruta/a/tu/imagen4.jpg" alt="Imagen 4" class="img-fluid mb-2">
+              Nombre del Botón 4
+            </button>
+          </div>
+        </div>
+    </div>
   </div>
 
   <!-- Enlaces a los archivos JavaScript de Bootstrap (jQuery y Popper.js son requeridos) -->

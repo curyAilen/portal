@@ -1,6 +1,6 @@
 /* Estilos generales */
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: 0;
     padding: 0;
   }
@@ -10,7 +10,15 @@ body {
     margin: 0 auto; 
     padding: 20px;
   }
-  
+
+  .navbar-brand,
+.navbar-nav .nav-link {
+  font-family: 'Roboto', sans-serif;
+}
+#logo-img {
+    max-width: 50%; 
+    height: auto; 
+  }
   /* Estilos para dispositivos móviles */
   @media (max-width: 767px) {
     .container {
