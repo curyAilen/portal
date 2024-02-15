@@ -4,7 +4,9 @@ body {
     margin: 0;
     padding: 0;
   }
-  
+  #inicio{
+    height: max-content;
+  }
   .container {
     max-width: 1200px; 
     margin: 0 auto; 
@@ -21,6 +23,9 @@ body {
   }
   button{
 text-align: right;
+  }
+  .contieneIcon{
+    align-self: center;
   }
   .svg-icon {
     width: 50%; 

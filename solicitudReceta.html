@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Solicitud de Medicamentos</title>
+  <!-- Enlace al archivo CSS de Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container mt-5">
+    <h2>Solicitud</h2>
+    <p>Ingrese los medicamentos a solicitar y su cantidad.</p>
+    
+    <!-- Formulario -->
+    <form id="solicitudForm">
+      <div class="mb-3">
+        <label for="medicamento" class="form-label">Medicamento</label>
+        <input type="text" class="form-control" id="medicamento" placeholder="Buscar medicamento...">
+      </div>
+      <div class="mb-3">
+        <label for="cantidad" class="form-label">Cantidad</label>
+        <input type="number" class="form-control" id="cantidad" placeholder="Cantidad">
+      </div>
+      <button type="button" class="btn btn-primary" id="agregarBtn">Agregar</button>
+    </form>
+    
+    <!-- Tabla para mostrar los medicamentos -->
+    <h3>Medicamentos Solicitados</h3>
+    <table class="table">
+      <thead>
+        <tr>
+          <th scope="col">Medicamento</th>
+          <th scope="col">Cantidad</th>
+        </tr>
+      </thead>
+      <tbody id="tablaMedicamentos">
+        <!-- Aquí se mostrarán los medicamentos agregados -->
+      </tbody>
+    </table>
+    
+    <!-- Botones -->
+    <button type="button" class="btn btn-success" id="enviarBtn">Enviar formulario</button>
+    <button type="button" class="btn btn-danger" id="cancelarBtn">Cancelar</button>
+  </div>
+
+  <!-- Enlaces a los archivos JavaScript de Bootstrap (jQuery y Popper.js son requeridos) -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/2.10.2/umd/popper.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
+  <!-- Tu script personalizado -->
+  <script>
+    $(document).ready(function() {
+      // Array para almacenar medicamentos agregados
+      let medicamentos = [];
+
+      // Agregar medicamento a la tabla
+      $('#agregarBtn').click(function() {
+        let medicamento = $('#medicamento').val();
+        let cantidad = $('#cantidad').val();
+
+        // Validar si se ha ingresado un medicamento y una cantidad
+        if (medicamento !== '' && cantidad !== '') {
+          // Agregar medicamento a la tabla
+          $('#tablaMedicamentos').append(`<tr><td>${medicamento}</td><td>${cantidad}</td></tr>`);
+
+          // Agregar medicamento al array
+          medicamentos.push({ medicamento: medicamento, cantidad: cantidad });
+
+          // Limpiar campos del formulario
+          $('#medicamento').val('');
+          $('#cantidad').val('');
+        } else {
+          alert('Por favor ingrese un medicamento y una cantidad.');
+        }
+      });
+
+      // Enviar formulario
+      $('#enviarBtn').click(function() {
+        // Aquí puedes agregar el código para enviar un correo con la información almacenada en la tabla
+        console.log('Medicamentos solicitados:', medicamentos);
+        alert('Formulario enviado correctamente.');
+      });
+
+      // Cancelar formulario
+      $('#cancelarBtn').click(function() {
+        // Limpiar tabla y array de medicamentos
+        $('#tablaMedicamentos').empty();
+        medicamentos = [];
+
+        // Limpiar campos del formulario
+        $('#medicamento').val('');
+        $('#cantidad').val('');
+      });
+    });
+  </script>
+</body>
+</html>
